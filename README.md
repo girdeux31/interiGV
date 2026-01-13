@@ -3,14 +3,14 @@
 ## Characteristics
 
  - Program: dificilGV
- - Version: 1.1
+ - Version: 1.2
  - Author: Carles Mesado
- - Date: 23/10/2025
- - Size: ~ 5.4 MiB
+ - Date: 15/01/2026
+ - Size: ~ 13 MiB
  
 ## Purpose
 
- Get a CSV with summary of hard coverage places in secondary teaching in Generalitat Valenciana (GVA, Spain) only.
+ Get a CSV with summary of secondary teaching jobs offert by Generalitat Valenciana (GVA, Spain) only.
 
 ## Requirements
 
@@ -32,20 +32,33 @@ Install modules with pip:
 
 ## Usage
 
-``python dificilGV.py /path/to/oferts.pdf [/path/to/final/results.pdf]``
+### dificilGV
 
- - oferts.pdf: pdf file with place oferts
- - results.pdf: pdf file with final results (optional, if included more info is shown in summary)
+``python dificilGV.py /path/to/offerts.pdf [/path/to/results.pdf]``
 
-Download pdfs in https://ceice.gva.es/es/web/rrhh-educacion/convocatoria-y-peticion-telematica6 and https://ceice.gva.es/es/web/rrhh-educacion/resolucion1
+ - offerts.pdf: pdf file with job offerts
+ - results.pdf: pdf file with results (optional, if included more info is shown in summary)
 
-## Example
+Download pdfs for dificil in https://ceice.gva.es/es/web/rrhh-educacion/convocatoria-y-peticion-telematica6 and https://ceice.gva.es/es/web/rrhh-educacion/resolucion1
 
-``python dificilGV.py example/230929_pue_prov.pdf example/230929_par.pdf``
+### continuaGV
+
+``python continuaGV.py /path/to/offerts.pdf [/path/to/results.pdf]``
+
+ - offerts.pdf: pdf file with job offerts
+ - results.pdf: pdf file with results (optional, if included more info is shown in summary)
+
+Download pdfs for continua in https://ceice.gva.es/es/web/rrhh-educacion/convocatoria-y-peticion-telematica and https://ceice.gva.es/es/web/rrhh-educacion/resolucion
+
+## Examples
+
+``python dificilGV.py examples/dificil/230929_pue_prov.pdf examples/dificil/230929_par.pdf``
+
+``python continuaGV.py examples/continua/260113_pue_prov.pdf examples/continua/260113_lis_sec.pdf``
 
 ## Additional parameters
 
- Tune candidate parameters (city, name, codes, and provinces) in the script from line 14 to 17.
+ Tune candidate parameters (city, name, codes, and provinces) in USER OPTIONS section.
 
  - City: your city to get distance from, check for typos
  - Name: your name as surnames and then first name, just as in the pdf, check for typos, to get your position (only if pdf with final results is included)
@@ -54,6 +67,8 @@ Download pdfs in https://ceice.gva.es/es/web/rrhh-educacion/convocatoria-y-petic
  - Provinces: list of provinces to include in summary, check for typos
 
 ## Output
+
+### dificilGV
 
  Columns in CSV are:
 
@@ -74,10 +89,29 @@ Download pdfs in https://ceice.gva.es/es/web/rrhh-educacion/convocatoria-y-petic
 
  (*) Columns are only included if results are supplied through a second input argument as a pdf.
 
+### continuaGV
+
+ Columns in CSV are:
+
+ - Code: Subject code, limited to candidate codes supplied in line 16
+ - Subject: Subject name according to the code given
+ - Province: Province where the school is, provinces can be filtered out according to line 18
+ - City: City where the shool is
+ - City ID: City ID according to GV
+ - Distance: Distance in km to candidate city according to city supplied in line 14
+ - School Name: School name
+ - School ID:: School ID according to GV
+ - Hours: Hours of lectures
+ - Language: Language degree required
+ - Itinerant: If job is assigned in two different schools
+ - Type: Type of substitution
+ - *
+
+ (*) Columns are only included if results are supplied through a second input argument as a pdf.
+
 ## Bugs
 
- - Candidates in final result file whose first name is longer than 16 characters are skipped since
-   candidate entry (see pattern in `final_candidate_pattern`) is split in two lines and format is mixed.
+ - Candidates in final result file whose first name is longer than 16 characters are skipped since candidate entry (see pattern in `final_candidate_pattern`) is split in two lines and format is mixed.
    
 ## License
 
@@ -85,7 +119,7 @@ This project includes MIT License. A short and simple permissive license with co
 
 ## Contact
 
-Visit GitHub page at https://github.com/girdeux31/dificilGV for more info.
+Visit GitHub page at https://github.com/girdeux31/interiGV for more info.
 
 Feel free to contact mesado31@gmail.com for any suggestion or bug.
      
