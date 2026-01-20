@@ -343,12 +343,12 @@ def process_files(
         else:
             df, info = \
                 parse_result_continua_pdf(pdf_result_file, candidate, result_pattern, result_check_line, df, debug=debug)
-            print_info(info)
+            print_continua_info(info)
 
     df.to_csv(csv_file, sep=CSV_SEPARATOR, index=False)
     print(f'See summary in \'{csv_file}\'')
 
-def print_info(info: dict[str, str | dict]):
+def print_continua_info(info: dict[str, str | dict]):
 
     for code in info:
 
