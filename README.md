@@ -63,7 +63,7 @@ Download pdfs for continua in https://ceice.gva.es/es/web/rrhh-educacion/convoca
  - City: your city to get distance from, check for typos
  - Name: your name as surnames and then first name, just as in the pdf, check for typos, to get your position (only if pdf with final results is included)
  - Codes: list of codes to include in summary, check codes = f(your degree) in
-   https://ceice.gva.es/documents/162909733/385996069/2024-25_%282%29_PROF.+DE+ENSE%C3%91ANZA+SECUNDARI_ESPECIALIDADES+Y+T%C3%8DTULOS.pdf
+   https://ceice.gva.es/documents/162909733/397528192/2024_25_%282%29_PROF.+DE+ENSE%C3%91ANZA+SECUNDARI_ESPECIALIDADES+Y+T%C3%8DTULOS.pdf
  - Provinces: list of provinces to include in summary, check for typos
 
 ## Output
@@ -72,18 +72,18 @@ Download pdfs for continua in https://ceice.gva.es/es/web/rrhh-educacion/convoca
 
  Columns in CSV are:
 
- - Code: Subject code, limited to candidate codes supplied in line 16
+ - Code: Subject code, codes can be filtered out in candidate info
  - Subject: Subject name according to the code given
- - Province: Province where the school is, provinces can be filtered out according to line 18
+ - Province: Province where the school is, provinces can be filtered out in candidate info
  - City: City where the shool is
  - City ID: City ID according to GV
- - Distance: Distance in km to candidate city according to city supplied in line 14
+ - Distance: Distance in km to candidate city according to city given to candidate
  - School Name: School name
  - School ID:: School ID according to GV
  - Hours: Hours of lectures
  - Other: Other information (type of substitution and requirements)
  - *Winner: Winner position
- - *You: Your position according to you name in line 15
+ - *You: Your position according to the name given to candidate
  - *Total: Total number of participants for that place
  - *Groups: Candidates in group 1/group 2/group 3
 
@@ -93,25 +93,26 @@ Download pdfs for continua in https://ceice.gva.es/es/web/rrhh-educacion/convoca
 
  Columns in CSV are:
 
- - Code: Subject code, limited to candidate codes supplied in line 16
+ - Code: Subject code, codes can be filtered out in candidate info
  - Subject: Subject name according to the code given
- - Province: Province where the school is, provinces can be filtered out according to line 18
+ - Province: Province where the school is, provinces can be filtered out in candidate info
  - City: City where the shool is
  - City ID: City ID according to GV
- - Distance: Distance in km to candidate city according to city supplied in line 14
+ - Distance: Distance in km to candidate city according to city given to candidate
  - School Name: School name
  - School ID:: School ID according to GV
  - Hours: Hours of lectures
  - Language: Language degree required
  - Itinerant: If job is assigned in two different schools
  - Type: Type of substitution
- - *
+ - *Winner: Winner position
+ - *You: YES if participant name matches with candidate's name
 
  (*) Columns are only included if results are supplied through a second input argument as a pdf.
 
 ## Bugs
 
- - Candidates in final result file whose first name is longer than 16 characters are skipped since candidate entry (see pattern in `final_candidate_pattern`) is split in two lines and format is mixed.
+ - Candidates in result file whose first name is longer than 16 characters are skipped since candidate entry is split in two lines and format is mixed.
    
 ## License
 

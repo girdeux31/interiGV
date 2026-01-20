@@ -3,6 +3,7 @@ import re
 from pathlib import Path
 from utilsGV import process_files, process_args, SPECIAL_ALPHA_CHARS, SPECIAL_ALPHANUMERIC_CHARS
 
+
 ### USER OPTIONS
 
 # candidate info, please check for typos
@@ -14,8 +15,8 @@ from utilsGV import process_files, process_args, SPECIAL_ALPHA_CHARS, SPECIAL_AL
 # provinces: provinces you want to look for (case insensitive), let's keep valencian and castilian names
 
 CANDIDATE = {
-    'home': 'Burriana',  # 'Valencia',
-    'name': 'Mesado Melia Carles',  # 'Surname1 Surname2 Name',
+    'home': 'Valencia',
+    'name': 'Surname1 Surname2 Name',
     'codes': [
         '206', '207', '209', '219', '236', '237', '264', '266', '269', 
         '272', '273', '276', '292', '2A1', '2A4', '2A8', '2A9', '2B6',
@@ -28,7 +29,7 @@ CANDIDATE = {
 
 ### END OF USER OPTIONS
 
-DEBUG = True  # False
+DEBUG = False
 OPTION = 'dificil'
 DEFAULT_COLUMNS = ['code', 'subject', 'province', 'city', 'city_id', 'distance_km',
                     'school_name', 'school_id', 'hours', 'other']
@@ -74,8 +75,8 @@ def print_help():
     print(' Download pdfs in \'https://ceice.gva.es/es/web/rrhh-educacion/convocatoria-y-peticion-telematica6\' and ')
     print(' \'https://ceice.gva.es/es/web/rrhh-educacion/resolucion1\'')
     print('')
-    print(' Visit GitHub page at https://github.com/girdeux31/dificilGV for more info.')
-    print('')    
+    print(' Visit GitHub page at https://github.com/girdeux31/interiGV for more info.')
+    print('')
 
 if __name__ == '__main__':
     
