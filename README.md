@@ -1,8 +1,8 @@
- # dificilGV
+# interiGV
 
 ## Characteristics
 
- - Program: dificilGV
+ - Program: interiGV
  - Version: 1.2
  - Author: Carles Mesado
  - Date: 15/01/2026
